@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="فندق مودرن بالاس - الموصل، العراق. إقامة فاخرة وخدمة غرف على مدار الساعة وحجز فوري عبر واتساب." />
+  <title>فندق مودرن بالاس – الموصل | Modern Palace Hotel Mosul</title>
+
+  <!-- Google Fonts: Cairo (Arabic) + Playfair Display & Inter (English) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER / NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <!-- Brand Logo (logo.png with classical column M/P SVG fallback) -->
+      <a href="#hero" class="brand" aria-label="Modern Palace Hotel Home">
+        <div class="brand-mark">
+          <img
+            src="logo.png"
+            alt="Modern Palace Hotel Logo"
+            class="brand-logo-img"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"
+          />
+          <span class="brand-logo-svg" style="display: none;" aria-hidden="true">
+            <svg viewBox="0 0 64 64" width="44" height="44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="60" height="60" rx="10" fill="#1A3E68" stroke="#CBD5E1" stroke-width="1.5"/>
+              <!-- Classical Capital -->
+              <rect x="14" y="13" width="36" height="4" rx="1" fill="#FFFFFF"/>
+              <path d="M16 17H48L45 21H19L16 17Z" fill="#CBD5E1"/>
+              <!-- Fluted Column & M/P Architectural Monogram -->
+              <rect x="19" y="22" width="4.5" height="24" fill="#FFFFFF"/>
+              <rect x="27" y="22" width="4.5" height="24" fill="#CBD5E1"/>
+              <path d="M35.5 22H42.5C46 22 48.5 24.4 48.5 28C48.5 31.6 46 34 42.5 34H39.5V46H35.5V22ZM39.5 25.5V30.5H42.2C43.8 30.5 44.8 29.5 44.8 28C44.8 26.5 43.8 25.5 42.2 25.5H39.5Z" fill="#FFFFFF"/>
+              <path d="M19 22L25.25 32L31.5 22" stroke="#808285" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Classical Pedestal Base -->
+              <path d="M16 47H48L50 51H14L16 47Z" fill="#CBD5E1"/>
+              <rect x="12" y="51" width="40" height="3.5" rx="1" fill="#FFFFFF"/>
+            </svg>
+          </span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name" data-i18n="brandName">فندق مودرن بالاس</span>
+          <span class="brand-sub" data-i18n="brandLocation">الموصل • العراق</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#hero" data-i18n="navHome">الرئيسية</a>
+        <a href="#about" data-i18n="navAbout">عن الفندق</a>
+        <a href="#services" data-i18n="navServices">الخدمات</a>
+        <a href="#rooms" data-i18n="navRooms">الغرف والأجنحة</a>
+        <a href="#gallery" data-i18n="navGallery">معرض الصور</a>
+        <a href="#location" data-i18n="navLocation">الموقع</a>
+      </nav>
+
+      <!-- Desktop Actions -->
+      <div class="nav-actions">
+        <button type="button" class="lang-switch" id="langToggleDesktop" aria-label="Switch Language">
+          <span class="lang-badge">EN</span>
+        </button>
+        <a href="#rooms" class="btn btn-nav-cta" id="navBookBtn" data-i18n="navBookNow">احجز عبر واتساب</a>
+      </div>
+
+      <!-- Mobile Controls -->
+      <div class="mobile-controls">
+        <button type="button" class="lang-switch lang-switch-sm" id="langToggleMobile" aria-label="Switch Language">
+          <span class="lang-badge">EN</span>
+        </button>
+        <button type="button" class="hamburger" id="mobileMenuBtn" aria-label="Open Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay (Strictly hidden on desktop >= 992px) -->
+  <div class="mobile-backdrop" id="mobileBackdrop" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-header">
+      <div class="brand-text">
+        <span class="brand-name" data-i18n="brandName">فندق مودرن بالاس</span>
+        <span class="brand-sub" data-i18n="brandLocation">الموصل • العراق</span>
+      </div>
+      <button type="button" class="drawer-close" id="mobileMenuClose" aria-label="Close Menu">&times;</button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="#hero" class="mobile-link" data-i18n="navHome">الرئيسية</a>
+      <a href="#about" class="mobile-link" data-i18n="navAbout">عن الفندق</a>
+      <a href="#services" class="mobile-link" data-i18n="navServices">الخدمات</a>
+      <a href="#rooms" class="mobile-link" data-i18n="navRooms">الغرف والأجنحة</a>
+      <a href="#gallery" class="mobile-link" data-i18n="navGallery">معرض الصور</a>
+      <a href="#location" class="mobile-link" data-i18n="navLocation">الموقع</a>
+    </nav>
+    <div class="mobile-drawer-footer">
+      <a href="#" class="btn btn-whatsapp btn-block" id="drawerWaBtn" target="_blank" rel="noopener noreferrer">
+        <span class="wa-icon-slot"></span>
+        <span data-i18n="heroBookBtn">احجز الآن عبر واتساب</span>
+      </a>
+      <p class="drawer-phone" dir="ltr">+964 780 009 8611</p>
+    </div>
+  </aside>
+
+  <!-- ===================== HERO SECTION (FACADE + KEN BURNS) ===================== -->
+  <section class="hero" id="hero">
+    <!-- Animated Ken Burns Crossfade Facade Slideshow -->
+    <div class="hero-slides" id="heroSlides" aria-hidden="true"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+      <div class="hero-top-copy">
+        <div class="hero-badge">
+          <span class="badge-stars" aria-hidden="true">★★★★★</span>
+          <span data-i18n="heroBadge">ضيافة فاخرة في قلب الموصل</span>
+        </div>
+        <h1 class="hero-title" data-i18n="heroTitle">فندق مودرن بالاس – الموصل</h1>
+        <p class="hero-subtitle" data-i18n="heroSubtitle">
+          فخامة معمارية عصرية، خدمة غرف على مدار الساعة، وتجربة إقامة استثنائية لرجال الأعمال والعائلات في مدينة الموصل.
+        </p>
+      </div>
+
+      <!-- Quick WhatsApp Booking Bar -->
+      <form class="booking-bar" id="heroBookingForm" autocomplete="off">
+        <div class="booking-grid">
+          <div class="booking-field">
+            <label for="checkInInput" data-i18n="labelCheckIn">تاريخ الوصول</label>
+            <input type="date" id="checkInInput" required />
+          </div>
+          <div class="booking-field">
+            <label for="checkOutInput" data-i18n="labelCheckOut">تاريخ المغادرة</label>
+            <input type="date" id="checkOutInput" required />
+          </div>
+          <div class="booking-field">
+            <label for="roomTypeSelect" data-i18n="labelRoomType">نوع الغرفة</label>
+            <select id="roomTypeSelect" required></select>
+          </div>
+          <div class="booking-field">
+            <label for="guestsSelect" data-i18n="labelGuests">عدد النزلاء</label>
+            <select id="guestsSelect" required></select>
+          </div>
+          <div class="booking-action">
+            <button type="submit" class="btn btn-whatsapp btn-hero-submit">
+              <span class="wa-icon-slot"></span>
+              <span data-i18n="heroBookBtn">احجز الآن عبر واتساب</span>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Facade Slideshow Controls -->
+      <div class="hero-footer-bar">
+        <div class="hero-slide-caption" id="heroSlideCaption"></div>
+        <div class="hero-dots" id="heroDots" role="tablist" aria-label="Hotel Exterior Views"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT SECTION ===================== -->
+  <section class="section about-section" id="about">
+    <div class="container about-grid">
+      <div class="about-media reveal reveal-right">
+        <div class="about-frame-accent"></div>
+        <div class="about-img-primary img-hover-zoom">
+          <img id="aboutImgMain" src="" alt="Modern Palace Hotel Lobby" loading="lazy" />
+        </div>
+        <div class="about-img-secondary img-hover-zoom">
+          <img id="aboutImgSecondary" src="" alt="Modern Palace Hospitality Lounge" loading="lazy" />
+        </div>
+        <div class="about-floating-card">
+          <strong data-i18n="aboutBadgeNumber">24/7</strong>
+          <span data-i18n="aboutBadgeText">خدمة غرف واستقبال</span>
+        </div>
+      </div>
+
+      <div class="about-text reveal reveal-left">
+        <span class="section-eyebrow" data-i18n="aboutEyebrow">عن فندق مودرن بالاس</span>
+        <h2 class="section-title" data-i18n="aboutTitle">أناقة كلاسيكية تلتقي بالراحة العصرية</h2>
+        <p class="section-lead" data-i18n="aboutDesc1"></p>
+        <p class="section-body" data-i18n="aboutDesc2"></p>
+
+        <div class="about-highlights" id="aboutHighlights"></div>
+
+        <div class="about-cta-row">
+          <a href="#rooms" class="btn btn-primary" data-i18n="aboutExploreRooms">استكشف الغرف والأجنحة</a>
+          <a href="#" class="btn btn-outline-navy" id="aboutWaBtn" target="_blank" rel="noopener noreferrer" data-i18n="aboutInquire">تواصل معنا فوراً</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES & AMENITIES SECTION ===================== -->
+  <section class="section services-section bg-light" id="services">
+    <div class="container">
+      <div class="section-header center reveal reveal-up">
+        <span class="section-eyebrow" data-i18n="servicesEyebrow">مرافق وخدمات الفندق</span>
+        <h2 class="section-title" data-i18n="servicesTitle">خدمات تنفيذية مصممة لراحتك</h2>
+        <p class="section-subtitle" data-i18n="servicesSubtitle">
+          نضع راحتك في صدارة أولوياتنا عبر مجموعة متكاملة من الخدمات الفندقية الراقية وعلى رأسها خدمة الغرف المتوفرة على مدار الساعة.
+        </p>
+      </div>
+
+      <div class="services-grid" id="servicesGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===================== ROOMS & SUITES SECTION ===================== -->
+  <section class="section rooms-section" id="rooms">
+    <div class="container">
+      <div class="section-header center reveal reveal-up">
+        <span class="section-eyebrow" data-i18n="roomsEyebrow">الإقامة الفاخرة</span>
+        <h2 class="section-title" data-i18n="roomsTitle">الغرف والأجنحة</h2>
+        <p class="section-subtitle" data-i18n="roomsSubtitle">
+          اختر غرفتك المثالية واحجز مباشرة خلال ثوانٍ عبر واتساب بدون أي تعقيدات أو بطاقات دفع مسبق.
+        </p>
+      </div>
+
+      <div class="rooms-grid" id="roomsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===================== PHOTO SHOWCASE & INTERACTIVE GALLERY ===================== -->
+  <section class="section gallery-section bg-light" id="gallery">
+    <div class="container">
+      <div class="section-header center reveal reveal-up">
+        <span class="section-eyebrow" data-i18n="galleryEyebrow">جولة مصورة</span>
+        <h2 class="section-title" data-i18n="galleryTitle">معرض صور الفندق</h2>
+        <p class="section-subtitle" data-i18n="gallerySubtitle">
+          استعرض الواجهة المعمارية، الردهة الفخمة، الغرف والأجنحة، ومطعم الفندق. انقر على أي صورة للعرض الكامل.
+        </p>
+      </div>
+
+      <!-- Auto-Playing Featured Showcase Slider -->
+      <div class="showcase-slider reveal reveal-up" id="showcaseSlider">
+        <div class="showcase-track" id="showcaseTrack"></div>
+        <button type="button" class="slider-arrow slider-prev" id="showcasePrev" aria-label="Previous Slide">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button type="button" class="slider-arrow slider-next" id="showcaseNext" aria-label="Next Slide">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <div class="showcase-dots" id="showcaseDots"></div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="gallery-filters reveal reveal-up" id="galleryFilters"></div>
+
+      <!-- Interactive Lightbox Grid -->
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===================== LOCATION & DIRECT CONTACT SECTION ===================== -->
+  <section class="section location-section" id="location">
+    <div class="container">
+      <div class="section-header center reveal reveal-up">
+        <span class="section-eyebrow" data-i18n="locationEyebrow">موقع استراتيجي</span>
+        <h2 class="section-title" data-i18n="locationTitle">موقعنا في قلب الموصل</h2>
+        <p class="section-subtitle" data-i18n="locationSubtitle">
+          سهولة الوصول إلى المراكز التجارية والحيوية في مدينة الموصل مع موقف سيارات خاص ومجاني للنزلاء.
+        </p>
+      </div>
+
+      <div class="location-grid">
+        <div class="location-card reveal reveal-right">
+          <div class="location-card-header">
+            <div class="location-pin-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <h3 data-i18n="brandName">فندق مودرن بالاس</h3>
+              <p class="location-address" data-i18n="locationAddress"></p>
+            </div>
+          </div>
+
+          <div class="location-landmarks" id="locationLandmarks"></div>
+
+          <div class="location-contact-box">
+            <div class="contact-row">
+              <span class="contact-label" data-i18n="labelWhatsappDirect">الحجز والاستفسار المباشر (واتساب):</span>
+              <a href="#" id="locationPhoneLink" class="contact-number" dir="ltr" target="_blank" rel="noopener noreferrer">07800098611</a>
+            </div>
+            <div class="location-actions">
+              <a href="#" class="btn btn-whatsapp" id="locationWaBtn" target="_blank" rel="noopener noreferrer">
+                <span class="wa-icon-slot"></span>
+                <span data-i18n="locationWaCta">احجز أو استفسر عبر واتساب</span>
+              </a>
+              <a href="#" class="btn btn-outline-navy" id="locationMapBtn" target="_blank" rel="noopener noreferrer" data-i18n="locationOpenMaps">
+                افتح في خرائط Google
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="location-map-wrap reveal reveal-left">
+          <iframe
+            id="locationMapIframe"
+            title="Modern Palace Hotel Mosul Map"
+            src="https://maps.google.com/maps?q=Modern%20Palace%20Hotel%20Mosul%20Iraq&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="#hero" class="brand brand-footer">
+            <div class="brand-mark">
+              <img
+                src="logo.png"
+                alt="Modern Palace Hotel Logo"
+                class="brand-logo-img"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"
+              />
+              <span class="brand-logo-svg" style="display: none;" aria-hidden="true">
+                <svg viewBox="0 0 64 64" width="46" height="46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="2" width="60" height="60" rx="10" fill="#1A3E68" stroke="#CBD5E1" stroke-width="1.5"/>
+                  <rect x="14" y="13" width="36" height="4" rx="1" fill="#FFFFFF"/>
+                  <path d="M16 17H48L45 21H19L16 17Z" fill="#CBD5E1"/>
+                  <rect x="19" y="22" width="4.5" height="24" fill="#FFFFFF"/>
+                  <rect x="27" y="22" width="4.5" height="24" fill="#CBD5E1"/>
+                  <path d="M35.5 22H42.5C46 22 48.5 24.4 48.5 28C48.5 31.6 46 34 42.5 34H39.5V46H35.5V22ZM39.5 25.5V30.5H42.2C43.8 30.5 44.8 29.5 44.8 28C44.8 26.5 43.8 25.5 42.2 25.5H39.5Z" fill="#FFFFFF"/>
+                  <path d="M19 22L25.25 32L31.5 22" stroke="#808285" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16 47H48L50 51H14L16 47Z" fill="#CBD5E1"/>
+                  <rect x="12" y="51" width="40" height="3.5" rx="1" fill="#FFFFFF"/>
+                </svg>
+              </span>
+            </div>
+            <div class="brand-text">
+              <span class="brand-name" data-i18n="brandName">فندق مودرن بالاس</span>
+              <span class="brand-sub" data-i18n="brandLocation">الموصل • العراق</span>
+            </div>
+          </a>
+          <p class="footer-desc" data-i18n="footerDesc"></p>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 data-i18n="footerQuickLinks">روابط سريعة</h4>
+          <ul>
+            <li><a href="#hero" data-i18n="navHome">الرئيسية</a></li>
+            <li><a href="#about" data-i18n="navAbout">عن الفندق</a></li>
+            <li><a href="#services" data-i18n="navServices">الخدمات</a></li>
+            <li><a href="#rooms" data-i18n="navRooms">الغرف والأجنحة</a></li>
+            <li><a href="#gallery" data-i18n="navGallery">معرض الصور</a></li>
+            <li><a href="#location" data-i18n="navLocation">الموقع</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact-col">
+          <h4 data-i18n="footerContactTitle">الحجز المباشر والتواصل</h4>
+          <p class="footer-address" data-i18n="locationAddress"></p>
+          <a href="#" class="footer-wa-card" id="footerWaLink" target="_blank" rel="noopener noreferrer">
+            <span class="wa-icon-slot"></span>
+            <div>
+              <small data-i18n="footerWaLabel">احجز عبر واتساب 24/7</small>
+              <strong dir="ltr">07800098611</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footerCopyright"></p>
+        <span class="footer-demo-note" data-i18n="footerDemoNote"></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING WHATSAPP BUTTON ===================== -->
+  <a href="#" class="floating-wa" id="floatingWaBtn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <span class="wa-pulse"></span>
+    <span class="wa-icon-slot"></span>
+    <span class="floating-wa-tooltip" data-i18n="floatingWaTooltip">احجز عبر واتساب</span>
+  </a>
+
+  <!-- ===================== FULLSCREEN LIGHTBOX VIEWER ===================== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close Lightbox">&times;</button>
+    <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous Image">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="lightbox-stage">
+      <img id="lightboxImg" src="" alt="" />
+      <div class="lightbox-meta">
+        <p id="lightboxCaption"></p>
+        <span id="lightboxCounter"></span>
+      </div>
+    </div>
+    <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next Image">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
